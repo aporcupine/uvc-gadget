@@ -1,14 +1,15 @@
 [Unit]
-Description=Stars pi webcam service
+Description=Pi webcam service
 
 [Service]
-ExecStart=/home/pi/uvc-gadget/piwebcam
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=piwebcam
-User=pi
-Group=pi
-WorkingDirectory=/home/pi/uvc-gadget/
+Type=simple
+ExecStart=/opt/uvc-gadget/piwebcam
+User=cam
+Group=cam
+WorkingDirectory=/opt/uvc-gadget/
+Restart=always
+PermissionsStartOnly=true
+ExecStartPre=/opt/uvc-gadget/multi-gadget.sh
 
 [Install]
 WantedBy=basic.target
