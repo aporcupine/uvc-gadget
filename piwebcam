@@ -1,10 +1,9 @@
 #!/bin/bash
-#
-sudo /home/pi/uvc-gadget/multi-gadget.sh
 /usr/bin/v4l2-ctl -c auto_exposure=0
 /usr/bin/v4l2-ctl -c auto_exposure_bias=8
 /usr/bin/v4l2-ctl -c contrast=20
 /usr/bin/v4l2-ctl -c video_bitrate=25000000
+
 # the following two lines are optional, comment them out if your cam is inverted
 /usr/bin/v4l2-ctl -c vertical_flip=1
 /usr/bin/v4l2-ctl -c horizontal_flip=1
